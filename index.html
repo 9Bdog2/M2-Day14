@@ -95,9 +95,29 @@
                 <input class="btn btn-primary" type="button" value="Add Team Member" onclick="addMember()" >
                 <button class="btn btn-primary" type="button" value="Create">Team Generator</button>
               </div>
-              <div class="col-12">
+              
+              <div class="col-6 mx-auto">
+                <ul id="team-queue" class="list-group">
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-primary mx-auto my-3" onclick="assign()">
+                        Assign
+                    </button>
+                    <button class="btn btn-danger mx-auto my-3" onclick="reset()">
+                        Reset
+                    </button>
+
+                </div>
                 
               </div>
+
+                <div class="col-12 col-sm-6 py-4 d-flex align-items-center">
+                  <span class="mx-1">Teams:</span> 
+                      <button class="btn btn-primary" onclick="removeTeam()">-</button>
+                      <span id="teams-number" class="px-3">2</span>
+                      <button class="btn btn-primary" onclick="addTeam()">+</button>
+              </div>
+              
           </div>
       </div>
       <!-- Input Area --> 
@@ -109,8 +129,10 @@
       <!-- Display Area --> 
 
       <div class="container" id="team-container">
-          <div class="row">
-              <div class="col-12 box"></div>
+          <div class="col-12 my-5">
+            <div id="teams-row" class="row">
+                                                            
+            </div>
           </div>
       </div>
 
