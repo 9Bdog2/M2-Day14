@@ -44,14 +44,14 @@
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
 
-        .box{
+        /* .box{
              width: 300px;
              height: 300px;
              border: 2px;
              border-style: solid;   
 
         }
-
+ */
     </style>
 
     <title>Team Generator</title>
@@ -124,13 +124,13 @@
 
 
       <hr>
-      <h2>Display teams</h2>
+      <h2>Display Names</h2>
       <hr>
       <!-- Display Area --> 
 
-      <div class="container" id="team-container">
+      <div class="container" id="name-container">
           <div class="col-12 my-5">
-            <div id="teams-row" class="row">
+            <div id="name-row" class="row">
                                                             
             </div>
           </div>
@@ -140,7 +140,13 @@
       <hr>
       <h2>Display teams</h2>
       <hr>
-    
+      <div class="container" id="team-container">
+        <div class="col-12 my-5">
+          <div id="teams-row" class="row">
+                                                          
+          </div>
+        </div>
+      </div>
 
 
     
@@ -156,17 +162,33 @@
     ></script>
     <script>
 
-        const addMember = function () {
+      const inputName = document.querySelector("#input-name")
+      const teamQueue = document.querySelector("#team-queue")
 
-            const createNewMemberNode = document.getElementById("creating-members")
+      const teamsN = document.querySelector("#teams-number")
+      const teamsRow = document.querySelector("#teams-row")
+
+
+
+        const addMember = function (event) {
+
+            /* const createNewMemberNode = document.getElementById("creating-members")
             const createNewMember = createNewMemberNode.value
 
             console.log(createNewMember)
 
-            const memberListNode = document.getElementById("team-container")
+            const memberListNode = document.getElementById("name-container")
             memberListNode.innerText= `${createNewMember}`
 
-            memberListNode.appendChild(memberListNode)
+            memberListNode.appendChild(memberListNode) */
+          event.preventDefault()
+
+          const li = document.createElement("li")
+          li.classList.add("list-group-item")
+          li.classList.add("d-flex")
+          li.classList.add("align-items-center")
+          li.innerHTML = inputName.value
+
         }
 
         const randomize = function (){
